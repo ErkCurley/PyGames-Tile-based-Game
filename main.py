@@ -34,7 +34,7 @@ class Game:
         sys.exit()
     
     def update(self):
-        pass
+        self.all_sprites.update()
     
     def events(self):
         pass

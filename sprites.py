@@ -11,3 +11,7 @@ class Player(pg.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.x = x
         self.y = y
+
+    def update(self):
+        self.rect.x = self.x * TILESIZE
+        self.rect.y = self.y * TILESIZE
