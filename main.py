@@ -7,10 +7,17 @@ class Game:
     def __init__(self):
         pg.init()
         self.screen = pg.display.set_mode((WIDTH, HEIGHT))
+        pg.display.set_caption(TITLE)
+        self.load_data()
 
-    def new(self):
+    def load_data(self):
         pass
 
+    def new(self):
+        self.all_sprites = pg.sprite.Group()
+        self.walls = pg.sprite.Group()
+        self.player = Player(self, 10, 10)
+    
     def run(self):
         pass
     
