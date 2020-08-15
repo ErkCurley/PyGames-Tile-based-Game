@@ -40,7 +40,10 @@ class Game:
         pass
 
     def draw(self):
-        pass
+        self.screen.fill(BGCOLOR)
+        # self.draw_grid()
+        # self.all_sprites.draw(self.screen)
+        # pg.display.flip()
     
     def show_start_screen(self):
         pass
