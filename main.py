@@ -45,6 +45,10 @@ class Game:
                     Floor(self, col, row)
                 if tile == 'P':
                     Floor(self, col, row)
+
+        for row, tiles in enumerate(self.map.data):
+            for col, tile in enumerate(tiles):
+                if tile == 'P':
                     self.player = Player(self, col, row)
 
         self.camera = Camera(self.map.width, self.map.height)
