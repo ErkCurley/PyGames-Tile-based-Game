@@ -37,11 +37,14 @@ CAVE_FLOOR_FOLDER = path.join(CAVE_FOLDER,'floors')
 
 CAVE_WALL_IMGS = [
     path.join(CAVE_WALL_FOLDER,'cave_wall.png'),
+    path.join(CAVE_WALL_FOLDER,'cave_wall1.png'),
     path.join(CAVE_WALL_FOLDER,'cave_wall2.png'),
-    path.join(CAVE_WALL_FOLDER,'cave_wall3.png'),
-    path.join(CAVE_WALL_FOLDER,'cave_wall4.png')
+    path.join(CAVE_WALL_FOLDER,'cave_wall3.png')
     ]
 
 CAVE_FLOOR_IMGS = [
-    path.join(CAVE_FLOOR_FOLDER,'cave_floor.png')
+    path.join(CAVE_FLOOR_FOLDER,'cave_floor.png'),
+    path.join(CAVE_FLOOR_FOLDER,'cave_floor1.png'),
+    path.join(CAVE_FLOOR_FOLDER,'cave_floor2.png'),
+    path.join(CAVE_FLOOR_FOLDER,'cave_floor3.png')
     ]
