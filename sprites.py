@@ -1,4 +1,5 @@
 import pygame as pg
+import random
 from settings import *
 from tilemap import collide_hit_rect
 vec = pg.math.Vector2
@@ -67,7 +68,7 @@ class Wall(pg.sprite.Sprite):
         self.groups = game.all_sprites, game.walls
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.image = game.wall_img
+        self.image = game.wall_imgs[random.randint(0,len(game.wall_imgs)-1)]
         self.rect = self.image.get_rect()
         self.x = x
         self.y = y
@@ -79,7 +80,7 @@ class Floor(pg.sprite.Sprite):
         self.groups = game.all_sprites, game.floors
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.image = game.floor_img
+        self.image = game.floor_imgs[random.randint(0,len(game.floor_imgs)-1)]
         self.rect = self.image.get_rect()
         self.x = x
         self.y = y

@@ -5,6 +5,7 @@
 import pygame as pg
 import sys
 from os import path
+import random
 from settings import *
 from sprites import *
 from tilemap import *
@@ -23,8 +24,14 @@ class Game:
         img_folder = path.join(game_folder, 'img')
         self.map = Map(path.join(game_folder, 'map2.txt'))
         self.player_img = pg.image.load(path.join(img_folder, PLAYER_IMG)).convert_alpha()
-        self.wall_img = pygame.transform.scale(pg.image.load(path.join(img_folder, path.join(CAVE_FOLDER,CAVE_WALL_IMG))).convert_alpha(),(32,32))
-        self.floor_img = pygame.transform.scale(pg.image.load(path.join(img_folder, path.join(CAVE_FOLDER,CAVE_FLOOR_IMG))).convert_alpha(),(32,32))
+
+        self.wall_imgs = []
+        self.floor_imgs = []
+        for wall in CAVE_WALL_IMGS:
+            self.wall_imgs.append(pygame.transform.scale(pg.image.load(wall).convert_alpha(),(32,32)))
+        
+        for floor in CAVE_FLOOR_IMGS:
+            self.floor_imgs.append(pygame.transform.scale(pg.image.load(floor).convert_alpha(),(32,32)))
 
 
         # cave = spritesheet(path.join(img_folder, CAVE_IMGS))

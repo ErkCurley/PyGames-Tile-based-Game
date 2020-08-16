@@ -1,4 +1,6 @@
 import pygame as pg
+from os import path
+
 
 # define some colors (R, G, B)
 WHITE = (255, 255, 255)
@@ -25,9 +27,21 @@ PLAYER_ROT_SPEED = 250.0
 PLAYER_IMG = 'manBlue_gun.png'
 PLAYER_HIT_RECT = pg.Rect(0, 0, 35, 35)
 
-CAVE_FOLDER = 'cave'
-CAVE_IMG = 'cave_wall.png'
+#IMG Stuff
+game_folder = path.dirname(__file__)
+img_folder = path.join(game_folder, 'img')
 
-CAVE_FOLDER = 'cave'
-CAVE_WALL_IMG = 'cave_wall.png'
-CAVE_FLOOR_IMG = 'cave_floor.png'
+CAVE_FOLDER = path.join(img_folder,'cave')
+CAVE_WALL_FOLDER = path.join(CAVE_FOLDER,'walls')
+CAVE_FLOOR_FOLDER = path.join(CAVE_FOLDER,'floors')
+
+CAVE_WALL_IMGS = [
+    path.join(CAVE_WALL_FOLDER,'cave_wall.png'),
+    path.join(CAVE_WALL_FOLDER,'cave_wall2.png'),
+    path.join(CAVE_WALL_FOLDER,'cave_wall3.png'),
+    path.join(CAVE_WALL_FOLDER,'cave_wall4.png')
+    ]
+
+CAVE_FLOOR_IMGS = [
+    path.join(CAVE_FLOOR_FOLDER,'cave_floor.png')
+    ]
