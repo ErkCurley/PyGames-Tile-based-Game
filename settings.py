@@ -1,3 +1,4 @@
+import pygame as pg
 
 # define some colors (R, G, B)
 WHITE = (255, 255, 255)
@@ -20,3 +21,13 @@ GRIDWIDTH = WIDTH / TILESIZE
 GRIDHEIGHT = HEIGHT / TILESIZE
 
 PLAYER_SPEED = 300
+PLAYER_ROT_SPEED = 250.0
+PLAYER_IMG = 'manBlue_gun.png'
+PLAYER_HIT_RECT = pg.Rect(0, 0, 35, 35)
+
+CAVE_FOLDER = 'cave'
+CAVE_IMG = 'cave_wall.png'
+
+CAVE_FOLDER = 'cave'
+CAVE_WALL_IMG = 'cave_wall.png'
+CAVE_FLOOR_IMG = 'cave_floor.png'

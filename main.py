@@ -8,6 +8,7 @@ from os import path
 from settings import *
 from sprites import *
 from tilemap import *
+from spritesheet import *
 
 class Game:
     def __init__(self):
@@ -19,18 +20,33 @@ class Game:
 
     def load_data(self):
         game_folder = path.dirname(__file__)
+        img_folder = path.join(game_folder, 'img')
         self.map = Map(path.join(game_folder, 'map2.txt'))
+        self.player_img = pg.image.load(path.join(img_folder, PLAYER_IMG)).convert_alpha()
+        self.wall_img = pygame.transform.scale(pg.image.load(path.join(img_folder, path.join(CAVE_FOLDER,CAVE_WALL_IMG))).convert_alpha(),(32,32))
+        self.floor_img = pygame.transform.scale(pg.image.load(path.join(img_folder, path.join(CAVE_FOLDER,CAVE_FLOOR_IMG))).convert_alpha(),(32,32))
+
+
+        # cave = spritesheet(path.join(img_folder, CAVE_IMGS))
+        # self.wall_img = pygame.transform.scale(cave.image_at(pg.Rect(96, 96, 16, 16)),(32,32))
+
 
     def new(self):
         # initialize all variables and do all the setup for a new game
         self.all_sprites = pg.sprite.Group()
         self.walls = pg.sprite.Group()
+        self.floors = pg.sprite.Group()
+
         for row, tiles in enumerate(self.map.data):
             for col, tile in enumerate(tiles):
                 if tile == '1':
                     Wall(self, col, row)
+                if tile == '.':
+                    Floor(self, col, row)
                 if tile == 'P':
+                    Floor(self, col, row)
                     self.player = Player(self, col, row)
+
         self.camera = Camera(self.map.width, self.map.height)
 
     def run(self):
