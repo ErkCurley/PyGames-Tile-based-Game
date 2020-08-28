@@ -3,6 +3,7 @@
 # Scrolling Map/Camera
 # Video link: https://youtu.be/3zV2ewk-IGU
 import pygame as pg
+import pytmx
 import sys
 from os import path
 import random
@@ -20,22 +21,10 @@ class Game:
         self.load_data()
 
     def load_data(self):
-        game_folder = path.dirname(__file__)
-        img_folder = path.join(game_folder, 'img')
-        self.map = Map(path.join(game_folder, 'map2.txt'))
-        self.player_img = pg.image.load(path.join(img_folder, PLAYER_IMG)).convert_alpha()
-
-        self.wall_imgs = []
-        self.floor_imgs = []
-        for wall in CAVE_WALL_IMGS:
-            self.wall_imgs.append(pygame.transform.scale(pg.image.load(wall).convert_alpha(),(32,32)))
-        
-        for floor in CAVE_FLOOR_IMGS:
-            self.floor_imgs.append(pygame.transform.scale(pg.image.load(floor).convert_alpha(),(32,32)))
-
-
-        # cave = spritesheet(path.join(img_folder, CAVE_IMGS))
-        # self.wall_img = pygame.transform.scale(cave.image_at(pg.Rect(96, 96, 16, 16)),(32,32))
+        self.map = TiledMap(MAP_FILE)
+        self.map_img = self.map.make_map()
+        self.map_rect = self.map_img.get_rect()
+        self.player_img = pg.image.load(path.join(IMG_FOLDER, PLAYER_IMG)).convert_alpha()
 
 
     def new(self):
@@ -44,21 +33,10 @@ class Game:
         self.walls = pg.sprite.Group()
         self.floors = pg.sprite.Group()
 
-        for row, tiles in enumerate(self.map.data):
-            for col, tile in enumerate(tiles):
-                if tile == '1':
-                    Wall(self, col, row)
-                if tile == '.':
-                    Floor(self, col, row)
-                if tile == 'P':
-                    Floor(self, col, row)
-
-        for row, tiles in enumerate(self.map.data):
-            for col, tile in enumerate(tiles):
-                if tile == 'P':
-                    self.player = Player(self, col, row)
-
+        self.player = Player(self, 5, 5)
         self.camera = Camera(self.map.width, self.map.height)
+        self.draw_debug = False
+
 
     def run(self):
         # game loop - set self.playing = False to end the game
@@ -85,10 +63,16 @@ class Game:
             pg.draw.line(self.screen, LIGHTGREY, (0, y), (WIDTH, y))
 
     def draw(self):
-        self.screen.fill(BGCOLOR)
-        self.draw_grid()
+        self.screen.blit(self.map_img, self.camera.apply_rect(self.map_rect))
+        
         for sprite in self.all_sprites:
             self.screen.blit(sprite.image, self.camera.apply(sprite))
+            if self.draw_debug:
+                pg.draw.rect(self.screen, CYAN, self.camera.apply_rect(sprite.hit_rect), 1)
+        if self.draw_debug:
+            for wall in self.walls:
+                pg.draw.rect(self.screen, CYAN, self.camera.apply_rect(wall.rect), 1)
+
         pg.display.flip()
 
     def events(self):
