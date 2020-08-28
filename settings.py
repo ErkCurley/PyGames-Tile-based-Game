@@ -24,27 +24,12 @@ GRIDHEIGHT = HEIGHT / TILESIZE
 
 PLAYER_SPEED = 300
 PLAYER_ROT_SPEED = 250.0
-PLAYER_IMG = 'manBlue_gun.png'
 PLAYER_HIT_RECT = pg.Rect(0, 0, 35, 35)
 
 #IMG Stuff
-game_folder = path.dirname(__file__)
-img_folder = path.join(game_folder, 'img')
+GAME_FOLDER = path.dirname(__file__)
+MAP_FOLDER = path.join(GAME_FOLDER, 'maps')
+IMG_FOLDER = path.join(GAME_FOLDER, 'img')
 
-CAVE_FOLDER = path.join(img_folder,'cave')
-CAVE_WALL_FOLDER = path.join(CAVE_FOLDER,'walls')
-CAVE_FLOOR_FOLDER = path.join(CAVE_FOLDER,'floors')
-
-CAVE_WALL_IMGS = [
-    path.join(CAVE_WALL_FOLDER,'cave_wall.png'),
-    path.join(CAVE_WALL_FOLDER,'cave_wall1.png'),
-    path.join(CAVE_WALL_FOLDER,'cave_wall2.png'),
-    path.join(CAVE_WALL_FOLDER,'cave_wall3.png')
-    ]
-
-CAVE_FLOOR_IMGS = [
-    path.join(CAVE_FLOOR_FOLDER,'cave_floor.png'),
-    path.join(CAVE_FLOOR_FOLDER,'cave_floor1.png'),
-    path.join(CAVE_FLOOR_FOLDER,'cave_floor2.png'),
-    path.join(CAVE_FLOOR_FOLDER,'cave_floor3.png')
-    ]
+MAP_FILE = path.join(MAP_FOLDER,'Lava Pass.tmx')
+PLAYER_IMG = 'manBlue_gun.png'
