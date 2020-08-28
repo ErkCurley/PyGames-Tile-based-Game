@@ -1,0 +1,99 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Lava Pass.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "Cave.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 4
+        },
+        "Lava Islands.tmx": {
+            "scale": 1.501,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 399.73351099267165,
+                "y": 399.40039973351105
+            }
+        },
+        "Lava Lakes.tmx": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 400,
+                "y": 399.75
+            }
+        },
+        "Lava Pass.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2000,
+                "y": 1998
+            }
+        },
+        "Lava Strait.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 372.66666666666663,
+                "y": 2942
+            }
+        },
+        "map.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 7744.999999999999,
+                "y": 7804
+            }
+        },
+        "map1.tmx": {
+            "scale": 2,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 3564.75,
+                "y": 3889
+            }
+        },
+        "map1_right done.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 1999.3333333333333,
+                "y": 1999.3333333333333
+            }
+        }
+    },
+    "map.height": 50,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 50,
+    "openFiles": [
+        "Lava Pass.tmx",
+        "Cave.tsx",
+        "Lava Lakes.tmx",
+        "Lava Islands.tmx"
+    ],
+    "project": "new game.tiled-project",
+    "recentFiles": [
+        "Lava Islands.tmx",
+        "Lava Lakes.tmx",
+        "Cave.tsx",
+        "Lava Pass.tmx",
+        "Lava Strait.tmx",
+        "map1_right done.tmx",
+        "map.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
